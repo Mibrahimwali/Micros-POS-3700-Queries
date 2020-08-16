@@ -1,0 +1,1 @@
+select sum(chk_ttl) as total_menu_amount from micros.dtl where trans_seq = 97926 and dtl_type = 'M' group by dtl_type
