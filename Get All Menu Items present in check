@@ -1,0 +1,5 @@
+select mi_dtl.mi_seq as ItemCode, dtl.dtl_name as ItemName, count(ItemCode) as Quantity, sum(dtl.chk_ttl) as TotalAmount,
+ mi_dtl.refill_base_price as SaleValue from micros.mi_dtl 
+Inner JOin micros.dtl ON mi_dtl.dtl_seq = dtl.dtl_seq and mi_dtl.trans_seq = dtl.trans_seq
+WHERE
+mi_dtl.trans_seq = 101661 GROUP BY mi_dtl.mi_seq, dtl.dtl_name, mi_dtl.refill_base_price
