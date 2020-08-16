@@ -1,0 +1,1 @@
+select sum(chk_ttl) as total_descount_amount from micros.dtl where trans_seq = 101660 and dtl_type = 'D' group by dtl_type
